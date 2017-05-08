@@ -3,7 +3,9 @@ package com.example.myfirstapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.GestureDetectorCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.GestureDetector;
@@ -34,6 +36,13 @@ public class DisplayMessageActivity extends AppCompatActivity
         myDetector = new GestureDetectorCompat(this,this);
         // Set the gesture detector as the double tap listener.
         myDetector.setOnDoubleTapListener(this);
+
+        Toolbar childToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(childToolbar);
+        // Get a support ActionBar corresponding to this toolbar
+        ActionBar ab = getSupportActionBar();
+        // Enable the Up button
+        ab.setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -52,7 +61,7 @@ public class DisplayMessageActivity extends AppCompatActivity
 
     @Override
     public boolean onDoubleTap(MotionEvent e) {
-        gestureText.setText("onDoubleTap");
+        gestureText.setText("");
         return true;
     }
 
@@ -65,7 +74,7 @@ public class DisplayMessageActivity extends AppCompatActivity
 
     @Override
     public boolean onDown(MotionEvent e) {
-        gestureText.setText("onDown");
+        gestureText.setText("");
         return true;
     }
 

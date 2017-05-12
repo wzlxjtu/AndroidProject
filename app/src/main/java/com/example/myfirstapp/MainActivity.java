@@ -1,10 +1,8 @@
 package com.example.myfirstapp;
 
 import android.content.Intent;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -70,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
         EditText pwText = (EditText) findViewById(R.id.password);
         String message = pwText.getText().toString();
 
-        if (true) {
-//        if (message.equals("0302")) {
+//        if (true) {
+        if (message.equals("0302")) {
             intent.putExtra(EXTRA_MESSAGE, message);
             startActivity(intent);
         }
